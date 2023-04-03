@@ -1,0 +1,145 @@
+{% extends "base/base.html" %}
+{% block content %}
+<style>
+html, body {
+  min-height: 100%;
+}
+
+body {
+    background-image: url("https://image.ibb.co/gcXe7z/bg_733162.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+h1, h2, h3 {
+    font-family: 'Abel';
+}
+
+p, input, textarea, button {
+    font-family: 'Abel';
+}
+
+.logo {
+    padding-top: 50px;
+    max-height: 150px;
+    max-width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.event-box {
+  width: 100%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 25px;
+  background: #5F7482; opacity: 0.8;
+  border-radius: 10px;
+}
+
+input {
+    height: 30px;
+    width: 100%;
+    border: 1px solid #232B30;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 5px;
+}
+
+textarea {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #232B30;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 5px;
+}
+
+/* GENERAL BUTTON STYLING */
+button,
+button::after {
+  -webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+button {
+  background: none;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  margin: 16px auto;
+  padding: 5px 30px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+button::before,
+button::after {
+  background: #fff;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+button:hover {
+  color: #5F7482;
+}
+
+.btn-submit::after  {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0;
+}
+
+.btn-submit:hover:after {
+  width: 100%;
+}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Event Calender | Submit Event</title>
+        <meta name="description" content="Event Calendar, submit your event here.">
+        <link rel="stylesheet" href="assets/css/mainstyle.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+        <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </style>        
+    </head>
+    <body>
+       
+        
+        <div class="event-box">
+            
+            <h2>Submit your running event</h2>
+            <p>Enter your event information below, once ready please check the information carefully before pressing the submit button. Once the submission has been sent the event will be on the calendar in 24 hours.</p>
+        
+        <form>
+            <h2>Event Name</h2>
+        <input type="text" name="eventname"><br>
+            
+            <h2>Event Description</h2>
+        <textarea name="message" rows="8"></textarea><br>
+ 
+            <div class="date">
+            <h2>Event Time and Date</h2>
+        <input type="text" name="datetimes"/><br>    
+            </div>
+              
+            <div class="venue">
+            <h2>Venue</h2>
+        <p>Venue Name:</p><input type="text" name="venuename"><br>
+        <p>Address:</p><input type="text" name="address"><br>
+        <p>Phone:</p><input type="tel" name="phone"><br>
+            </div>
+            
+<br>
+            <button class= "btn-submit" type="submit" value="Submit">Submit</button>    
+        </form>
+        </div>
+{% endblock %}
+ 

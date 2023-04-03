@@ -1,0 +1,234 @@
+{% extends "base/base.html" %}
+{% block content %}
+<style>
+ body{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url(https://wallpapercave.com/wp/wp5480613.png);
+    background-size: cover;
+    background-position: center;
+  }
+  h1,p{
+    color:#fff;
+  }
+
+  header {
+    color: #edc058;
+    font-size: 23px;
+  }
+
+  #description {
+    font-size: 15px;
+  }
+
+  form {
+    margin: 50px;
+    text-align: left;
+    color: #edc058;
+    font-size: 15px;
+    background:#1e90ff;
+  }
+
+  input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    font-size: 16px;
+    margin: 15px 0;
+    color: #c6a350;
+  }
+label{
+  color:#fff;
+}
+  ::placeholder{
+    opacity: 1;
+    color:#fff;
+  }
+
+  .form-group {
+    padding: 20px;
+    margin-bottom: 0px;
+  }
+
+  .input-radio,
+  .input-checkbox {
+    display: inline-block;
+    width: auto;
+    margin: 0 15px 10px 0;
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  textarea::placeholder {
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: 2px;
+  }
+
+  .clue {
+    font-size: 10px;
+  }
+
+  [type="radio"]{
+    position: relative !important;
+    opacity: 1 !important;
+    cursor: pointer;
+}
+  select {
+    width: 100%;
+    height: 35px;
+    font-family: "Open Sans", sans-serif;
+    background: transparent;
+    color: #c6a350;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  input[type="radio"]:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #c1ef5c;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid rgb(229, 148, 148);
+  }
+
+  input[type="radio"]:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    background-color: black;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid yellow;
+  }
+
+
+
+  input[type="checkbox"]:checked:after {
+    width: 15px;
+    height: 15px;
+    top: -2px;
+    left: -1px;
+    background-color: black;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+  }
+
+  button {
+    width: 100%;
+    height: 45px;
+    background-color: #edc058;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    cursor: pointer;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+  }
+.submission{
+  color:#000;
+}
+  @media (max-width: 460px) {
+    html {
+      font-size: 10px;
+    }
+
+    header {
+      font-size: 15px;
+      margin: 10px;
+    }
+
+    #description {
+      font-size: 11px;
+      margin: 10px;
+    }
+
+    form {
+      margin: 15px;
+      font-size: 12px;
+    }
+  }
+</style>
+<h1 id="title">Rooms Survey Form</h1>
+<p id="description">Thank you for taking the time to help us improve our service</p>
+
+<form id="survey-form">
+  <div class="form-group">
+    <label id="name-label" for="name">Name</label>
+    <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required />
+  </div>
+  <div class="form-group">
+    <label id="email-label" for="email">Email</label>
+    <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" required />
+  </div>
+  <div class="form-group">
+    <label id="number-label" for="number">
+      Age <span class="clue">(optional)</span></label>
+    <input type="number" name="age" id="number" min="10" max="99" class="form-control" placeholder="Age" />
+  </div>
+
+  <div class="form-group">
+    <p>Would you reccomend Rooms to a friend?</p>
+    <label>
+      <input type="radio" name="reccomend" value="yes" class="input-radio" checked>Of Course</label><br>
+    <label>
+      <input type="radio" name="reccomend" value="maybe" class="input-radio">Maybe</label><br>
+    <label>
+      <input type="radio" name="reccomend" value="no" class="input-radio">Not Sure</label><br>
+  </div>
+  <div class="form-group">
+    <p>What is your favorite feature of Rooms?</p>
+    <select id="favorite" name="fav" class="form-control" required>
+      <option disabled selected value>Select an Option</option>
+      <option value="room">Rooms</option>
+      <option value="suite">Suite</option>
+      <option value="buffet">Buffet or Breakfast</option>
+      <option value="cafe">Cafehouse</option>
+      <option value="house">Housekeeping Service</option>
+      <option value="room-service">Room Service</option>
+      <option value="lounge">Lounge</option>
+      <option value="fitness">Fitness Center</option>
+      <option value="spa">Spa</option>
+      <option value="swim">Swimming Pool</option>
+      <option value="valet">Valet Parking</option>
+      <option value="customer">Customer Service</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <p>Any comments or suggestions?</p>
+    <textarea id="extra" class="comments" name="comment" Placeholder="Enter your comments here..."></textarea>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" id="submit" class="submission">Submit</button>
+  </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,240 @@
+
+{% extends "base/base.html" %}
+{% block content %}
+
+<style>
+h1,p,label{
+  color:#fff;
+}
+  body {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url(https://wallpapercave.com/wp/wp5480613.png);
+    background-size: cover;
+    background-position: center;
+  }
+
+  header {
+    color: #090908;
+    font-size: 23px;
+  }
+
+  #description {
+    font-size: 15px;
+  }
+
+  form {
+    margin: 50px;
+    text-align: left;
+    color: #251c06;
+    font-size: 15px;
+    background: rgb(30 144 255);
+  }
+
+  input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(15, 13, 13);
+    outline: none;
+    font-size: 16px;
+    margin: 15px 0;
+    color: #141413;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  input::placeholder {
+    opacity: 0;
+  }
+
+  .form-group {
+    padding: 20px;
+    margin-bottom: 0px;
+  }
+
+  .input-radio,
+  .input-checkbox {
+    display: inline-block;
+    width: auto;
+    margin: 0 15px 10px 0;
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  textarea::placeholder {
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: 2px;
+  }
+
+  .clue {
+    font-size: 10px;
+  }
+
+  select {
+    width: 100%;
+    height: 35px;
+    font-family: "Open Sans", sans-serif;
+    background: transparent;
+    color: #f8f7f5;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  input[type="radio"] {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #747d61;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid rgb(250, 16, 16);
+  }
+
+  input[type="radio"] {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    background-color: black;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid rgb(238, 238, 241);
+    position:relative !important;
+    opacity:1 !important;
+  }
+
+  input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: yellow;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+    position:relative !important;
+    opacity:1 !important;
+  }
+
+  input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    top: -2px;
+    left: -1px;
+    background-color: black;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+  }
+
+  button {
+    width: 100%;
+    height: 45px;
+    background-color: #fffefa;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    cursor: pointer;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  @media (max-width: 460px) {
+    html {
+      font-size: 10px;
+    }
+
+    header {
+      font-size: 15px;
+      margin: 10px;
+    }
+
+    #description {
+      font-size: 11px;
+      margin: 10px;
+    }
+
+    form {
+      margin: 15px;
+      font-size: 12px;
+    }
+  }
+</style>
+<h1>Cancellation form</h1>
+<p id="description">Thank you for booking.</p>
+</header>
+
+<form id="survey-form">
+  <div class="form-group">
+    <label id="name-label" for="name">Name</label>
+    <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required />
+  </div>
+  <div class="form-group">
+    <label id="email-label" for="email">Email</label>
+    <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" required />
+  </div>
+  <div class="form-group">
+    <label id="number-label" for="number">
+      Age <span class="clue">(optional)</span></label>
+    <input type="number" name="age" id="number" min="10" max="99" class="form-control" placeholder="Age" />
+  </div>
+
+  <div class="form-group">
+    <p>Repayment Mode</p>
+    <label>
+      <input type="radio" name="reccomend" value="yes" class="input-radio" checked>Cash</label><br>
+    <label>
+      <input type="radio" name="reccomend" value="maybe" class="input-radio">Account</label><br>
+    <label>
+      <input type="radio" name="reccomend" value="no" class="input-radio">UPI</label><br>
+  </div>
+  <div class="form-group">
+
+    </select>
+  </div>
+
+  <div class="form-group">
+    <p>Reason for Cancellation (Check all that apply)</p>
+
+    <label><input name="help" value="guest-room" type="checkbox" class="input-checkbox">Wrong Food recieved
+    </label><br>
+    <label><input name="help" value="dining" type="checkbox" class="input-checkbox">MisBehave</label><br>
+    <label><input name="help" value="customer" type="checkbox" class="input-checkbox">Bad Services</label><br>
+    <label><input name="help" value="customer" type="checkbox" class="input-checkbox">Ordered by Mistake</label><br>
+
+  </div>
+
+  <div class="form-group">
+    <p>Any comments or suggestions?</p>
+    <textarea id="extra" class="comments" name="comment" Placeholder="Enter your comments here..."></textarea>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" id="submit" class="submission">Submit</button>
+  </div>
+</form>
+</div>
+
+{% endblock  %}
